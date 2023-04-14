@@ -54,7 +54,6 @@ class WordDetailFragment : Fragment() {
     }
 
     private val wordDetailObserver = Observer<WordDefinitions> {
-        Log.d("**logged", "word name ${it.word}")
         with(binding) {
             wordDefinition.text = it.definition
             thumbsUp.text = it.thumbsUp.toString()

@@ -1,14 +1,12 @@
 package com.example.urbandictionaryn.repository
 
 import android.util.Log
-import com.example.urbandictionaryn.models.WordDefinitions
 import com.example.urbandictionaryn.database.DatabaseEntity
-import com.example.urbandictionaryn.repository.service.DictionaryService
 import com.example.urbandictionaryn.database.UrbanDictionaryDatabase
+import com.example.urbandictionaryn.models.WordDefinitions
+import com.example.urbandictionaryn.repository.service.DictionaryService
 import com.example.urbandictionaryn.utils.listFromJson
 import com.example.urbandictionaryn.utils.listToJson
-import java.lang.Exception
-import java.util.*
 
 class UrbanDictionaryRepository(
     private val urbanDictionaryDatabase: UrbanDictionaryDatabase
