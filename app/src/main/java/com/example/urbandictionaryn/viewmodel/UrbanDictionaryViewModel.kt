@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.urbandictionaryn.WordDetailFragment
 import com.example.urbandictionaryn.models.WordDefinitions
 import com.example.urbandictionaryn.repository.UrbanDictionaryRepository
 import com.example.urbandictionaryn.utils.SortTypeEnum
@@ -76,8 +75,9 @@ class UrbanDictionaryViewModel(
     fun getWordDetails(position: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             _wordDefinitions.value?.let {
-                Log.d("**logged", "position: $position")
                 _wordDetail.postValue(it[position])
+                Log.d("**logged", "position: $position")
+                Log.d("**logged", "word name ${it[position].word}")
             }
         }
     }

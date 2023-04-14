@@ -24,7 +24,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding true
     }
     compileOptions {
@@ -46,19 +46,22 @@ dependencies {
     implementation 'androidx.room:room-ktx:2.5.1'
     implementation "androidx.room:room-runtime:2.5.1"
     kapt "androidx.room:room-compiler:2.5.1"
+
+    // Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation "androidx.activity:activity-ktx:1.4.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
-    implementation "androidx.fragment:fragment-ktx:1.5.5"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.activity:activity-ktx:1.7.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation "androidx.fragment:fragment-ktx:1.5.6"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.google.code.gson:gson:2.9.0'
 
     // Koin
     implementation "io.insert-koin:koin-android:$koin_version"

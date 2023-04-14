@@ -16,7 +16,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class WordFragment : Fragment(), DataAdapter.WordDetailClickListener {
 
-    lateinit var binding: FragmentWordBinding
+    private lateinit var binding: FragmentWordBinding
     private lateinit var dataAdapter: DataAdapter
     private val viewModel: UrbanDictionaryViewModel by sharedViewModel()
 
@@ -30,12 +30,12 @@ class WordFragment : Fragment(), DataAdapter.WordDetailClickListener {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWordBinding.inflate(inflater, container, false)
-        initUI()
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUI()
         with(viewModel) {
             wordDefinitions.observe(viewLifecycleOwner, definitionObserver)
             errorMsg.observe(viewLifecycleOwner, errorMsgObserver)
@@ -96,7 +96,6 @@ class WordFragment : Fragment(), DataAdapter.WordDetailClickListener {
     }
 
     override fun wordSelected(position: Int) {
-        viewModel.getWordDetails(position)
         activity?.supportFragmentManager?.beginTransaction()
             ?.replace(android.R.id.content, WordDetailFragment.newInstance(position))
             ?.addToBackStack(null)?.commit()
