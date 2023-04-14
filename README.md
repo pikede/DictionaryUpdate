@@ -1,5 +1,18 @@
 # DictionaryUpdate
 Dictionary App by Prince Ikede
+This is a Dictionary app that allows a user to do the following:
+
+- Writen in Kotlin.
+- Allows users to enter the term they wish to search.
+- Shows the list of resulting definitions, with number of thumbs up and thumbs down votes, using a
+RecyclerView for this list.
+- Allows users to sort by either most thumbs up or down.
+- Shows a progress indication while the Dictionary API call is being made.
+- Handles configuration changes gracefully
+- Cache results for limited offline operation
+- Uses Dependency injection for dependencies 
+- Documents a few assumptions 
+
 ----------------------------------------------------------------------------------------------------
 
 Tools used: Android, Runnable, Handler, Dependency Injection, Kotlin, MutableLiveData, Coroutines, MVVM Architecture, 
@@ -7,7 +20,7 @@ Retrofit, Koin, Junit, Mockito, Room Database, Coroutines
 
 ----------------------------------------------------------------------------------------------------
 
-Features:
+Results:
 
 - Edit text for getting user's search word
 - Search button used for searching user's search word
@@ -26,6 +39,9 @@ Features:
 Improvements that can be made:
 - user tracking and analytics
 - test coverage for search and database transactions
+- mutex lock for database transaction
 
 
-API: https://mashape-community-urban-dictionary.p.rapidapi.com
+# API
+- https://mashape-community-urban-dictionary.p.rapidapi.com
+- https://rapidapi.com/community/api/urban-dictionary
