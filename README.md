@@ -1,8 +1,7 @@
-# DictionaryUpdate
-Dictionary App by Prince Ikede
+# DictionaryUpdate: A Dictionary App by Prince Ikede
 This is a Dictionary app that allows a user to do the following:
 
-- Writen in Kotlin.
+- Written in Kotlin.
 - Allows users to enter the term they wish to search.
 - Shows the list of resulting definitions, with number of thumbs up and thumbs down votes, using a
 RecyclerView for this list.
@@ -36,11 +35,11 @@ Results:
 
 ----------------------------------------------------------------------------------------------------
 
-Improvements that can be made:
-- user tracking and analytics
+Future improvements that can be made:
+- user tracking and analytics (most searched word by location)
 - test coverage for search and database transactions
 - mutex lock for database transaction
-
+- recycler view can be styled a bit more
 
 # API
 - https://mashape-community-urban-dictionary.p.rapidapi.com
