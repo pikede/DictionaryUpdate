@@ -28,19 +28,23 @@ class UrbanDictionaryViewModel(
         _wordDefinitions.postValue(
             definition.ifEmpty {
                 handleErrorResponse()
+                // handles error scenario as empty list (like no internet, invalid word, etc.)
                 emptyList()
             }
         )
-        // handle error scenario
+
     }
 
+    // handle error scenario
     private fun handleErrorResponse() {
         errorMsg.postValue("Error fetching word meaning")
     }
 
     fun clearWordDefinition() {
-        _wordDefinitions.postValue(listOf())
-        Log.d("**logged", "clearing in viewmodel")
+        viewModelScope.launch(Dispatchers.IO) {
+            _wordDefinitions.postValue(listOf())
+            Log.d("**logged", "clearing definitions in viewmodel")
+        }
     }
 
     // sorts word definitions and returns back a sorted list
